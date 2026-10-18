@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section class="hero">
+    <h2>Bienvenido a Flask</h2>
+    <p>Aplicación de ejemplo con rutas enlazadas a plantillas HTML (Jinja2).</p>
+    <a class="boton" href="{{ url_for('estudiantes') }}">Ver estudiantes</a>
+</section>
+
+<section class="tarjetas">
+    <article class="tarjeta">
+        <h3>Rutas</h3>
+        <p>Cada ruta de <code>app.py</code> devuelve una vista con <code>render_template</code>.</p>
+    </article>
+    <article class="tarjeta">
+        <h3>Plantillas</h3>
+        <p>Todas las páginas heredan de <code>base.html</code> para compartir menú y pie.</p>
+    </article>
+    <article class="tarjeta">
+        <h3>Estáticos</h3>
+        <p>Los estilos y scripts se cargan con <code>url_for('static', ...)</code>.</p>
+    </article>
+</section>
+{% endblock %}

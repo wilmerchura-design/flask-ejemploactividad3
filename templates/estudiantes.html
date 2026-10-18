@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Lista de estudiantes</h2>
+
+<input type="search" id="filtro" placeholder="Buscar estudiante..." class="campo">
+
+{% if estudiantes %}
+<table class="tabla" id="tabla-estudiantes">
+    <thead>
+        <tr><th>N°</th><th>Nombre</th><th>Carrera</th><th>Curso</th></tr>
+    </thead>
+    <tbody>
+        {% for e in estudiantes %}
+        <tr>
+            <td>{{ e.id }}</td>
+            <td>{{ e.nombre }}</td>
+            <td>{{ e.carrera }}</td>
+            <td>{{ e.curso }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="nota">Total: {{ estudiantes|length }} estudiantes</p>
+{% else %}
+<p>No hay estudiantes registrados.</p>
+{% endif %}
+{% endblock %}
